@@ -1,4 +1,16 @@
 <?php
+session_start();
+
+// Se o usuário já estiver logado, redireciona direto para o painel correto
+if (isset($_SESSION['usuario_id'])) {
+    if ($_SESSION['usuario_tipo'] === 'osc') {
+        header("Location: painel-osc.php");
+    } else {
+        header("Location: painel-doador.php");
+    }
+    exit();
+}
+
 // Conexão com o banco
 $servername = "localhost";
 $username = "root";      // seu usuário do MySQL
@@ -18,6 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
     $confirmar = $_POST['confirmar'];
+    $telefone = $_POST['telefone'];
+    $cidade = $_POST['cidade'];
+    $cnpj = $_POST['cnpj'];
 
     // Verifica se as senhas conferem
     if ($senha !== $confirmar) {
@@ -27,10 +42,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Criptografa a senha
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
-    // Insere no banco
-    $sql = "INSERT INTO oscs (nome, email, senha) VALUES (?, ?, ?)";
+    // Ajustado para inserir os 6 campos necessários na tabela oscs
+    $sql = "INSERT INTO oscs (nome, email, senha, telefone, cidade, cnpj) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sss", $nome, $email, $senhaHash);
+    
+    // "ssssss" indica que são 6 parâmetros do tipo string
+    $stmt->bind_param("ssssss", $nome, $email, $senhaHash, $telefone, $cidade, $cnpj);
 
     if ($stmt->execute()) {
         echo "<script>alert('Cadastro realizado com sucesso!'); window.location.href='login.php';</script>";
@@ -59,16 +76,16 @@ $conn->close();
         <div class="form-wrapper">
             <!-- Painel esquerdo -->
             <div class="left-panel">
-                <a href="index.php">
-                    <div class="logo">RELEIA</div>
-                </a>
-                <h2 class="welcome">FAÇA SEU
-                    <br />CADASTRO!
-                </h2>
                 <p class="description">
                     "Apenas porque não posso vê-lo, não significa que eu não
                     posso creditar." - O Estranho Mundo de Jack
                 </p>
+                <h2 class="welcome">FAÇA SEU
+                    <br />CADASTRO!
+                </h2>
+                <a href="index.php">
+                    <div class="logo">RELEIA</div>
+                </a>
             </div>
 
             <!-- Painel direito -->
