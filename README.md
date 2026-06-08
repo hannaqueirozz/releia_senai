@@ -1,11 +1,10 @@
 # RELEIA - Plataforma de Doação de Livros
 
-> O **RELEIA** é uma plataforma web desenvolvida para conectar pessoas que possuem livros disponíveis para doação a Organizações da Sociedade Civil (OSCs)...
-
-<img src="logo.png" alt="Logo do Sistema RELEIA" width="100" align="left" style="background-color: white; padding: 5px; border-radius: 4px; margin-right: 10px;"> ![Status do Projeto](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow) ![PHP](https://img.shields.io/badge/PHP-7.4%20%7C%208.x-777BB4?logo=php&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
+<img src="logo.png" alt="Logo do Sistema RELEIA" width="100" align="left"> ![Status do Projeto](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow) ![PHP](https://img.shields.io/badge/PHP-7.4%20%7C%208.x-777BB4?logo=php&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
 
 <br clear="left">
 
+> O **RELEIA** é uma plataforma web desenvolvida para conectar pessoas que possuem livros disponíveis para doação a Organizações da Sociedade Civil (OSCs)...
 ---
 
 ## Funcionalidades Principais (Features)
