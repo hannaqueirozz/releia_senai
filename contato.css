@@ -1,0 +1,166 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E RESETS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FFFFFF;
+    color: #333333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Container flexível para estruturar a página principal */
+.contato-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   SEÇÃO 5: CONTATO - [FUNDO AZUL CLARO]
+   ========================================================================== */
+.contato {
+    background-color: #8BB0C9; /* Fundo Azul Claro */
+    color: #FFFFFF;            /* Texto Branco */
+    padding: 60px 20px;
+    width: 100%;
+}
+
+.contato h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #FFFFFF;
+}
+
+.form-contato {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-contato input, 
+.form-contato textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: #E2E8F0;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #333333;
+}
+
+.form-contato input::placeholder, 
+.form-contato textarea::placeholder {
+    color: #777777;
+}
+
+.form-contato button {
+    background-color: #FFFFFF;
+    color: #4A5D6B;
+    border: none;
+    padding: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.form-contato button:hover {
+    background-color: #F0F0F0;
+}
+
+/* ==========================================================================
+   SEÇÃO 4: PERGUNTAS FREQUENTES (FAQ) - [FUNDO BRANCO]
+   ========================================================================== */
+.Perguntas {
+    background-color: #FFFFFF; /* Fundo Branco */
+    color: #4A5D6B;            /* Texto Escuro */
+    padding: 60px 20px;
+    width: 100%;
+}
+
+.Perguntas h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #4A5D6B;
+}
+
+/* Box interno para limitar a largura do FAQ na tela */
+.faq-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+details {
+    background-color: #F8FAFC; /* Contraste sutil dentro do fundo branco */
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    padding: 15px;
+    text-align: left;
+    transition: background-color 0.3s;
+}
+
+details[open] {
+    background-color: #F1F5F9;
+}
+
+summary {
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #4A5D6B; /* Cor escura visível */
+}
+
+/* Remove a setinha nativa em navegadores baseados em Webkit (Safari/Chrome) */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: '▼';
+    font-size: 0.8rem;
+    color: #8BB0C9;
+}
+
+details[open] summary::after {
+    content: '▲';
+}
+
+details p {
+    margin-top: 10px;
+    color: #555555; /* Texto visível confortável */
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   RODAPÉ (FOOTER) - [FUNDO AZUL CLARO]
+   ========================================================================== */
+.site-footer {
+    background-color: #8BB0C9; /* Fundo Azul Claro */
+    color: #FFFFFF;            /* Texto Branco */
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    width: 100%;
+}

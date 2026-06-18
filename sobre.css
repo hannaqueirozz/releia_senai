@@ -1,0 +1,67 @@
+/* ==========================================================================
+   PÁGINA SOBRE O PROJETO (SOBRE.CSS)
+   ========================================================================== */
+
+/* Container geral que abraça as duas seções */
+.sobre-projeto {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- SEÇÃO: SOBRE O PROJETO [FUNDO AZUL CLARO] --- */
+.sobre {
+    background-color: #8BB0C9; /* Fundo Azul Claro */
+    color: #FFFFFF;            /* Texto Branco */
+    padding: 60px 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.sobre h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+
+.sobre p {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: justify;       /* Mantém o padrão estético de leitura fluida */
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* --- SEÇÃO: PIX / AJUDE NOSSO PROJETO [FUNDO BRANCO] --- */
+.pix {
+    background-color: #FFFFFF; /* Fundo Branco */
+    color: #4A5D6B;            /* Texto Escuro */
+    padding: 60px 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.pix h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #4A5D6B;
+}
+
+.pix p {
+    max-width: 700px;          /* Um pouco mais largo para acomodar bem o texto */
+    margin: 0 auto 30px auto;
+    color: #555555;            /* Cinza escuro para melhor legibilidade no branco */
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.pix img {
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+    border: 1px solid #E0E0E0;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra leve para destacar o QR Code */
+}

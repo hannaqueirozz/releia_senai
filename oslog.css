@@ -1,0 +1,270 @@
+/* ==========================================================================
+   ESTILO GERAL E LAYOUT - RELEIA (PAINEL DA OSC)
+   ========================================================================== */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FFFFFF;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Banner superior corporativo */
+.hero-banner {
+    background-color: #4A5D6B; /* Azul Escuro */
+    color: #FFFFFF;
+    padding: 50px 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hero-banner h2 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Container do Painel e Cabeçalho */
+.panel-container {
+    max-width: 1200px; /* Aumentado para acomodar melhor 4 cards lado a lado */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.panel-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.panel-header h2 {
+    color: #4A5D6B; /* Azul Escuro */
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.panel-header p {
+    color: #555555;
+    font-size: 1.05rem;
+}
+
+.panel-content h3 {
+    color: #4A5D6B;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(139, 176, 201, 0.3);
+    padding-bottom: 8px;
+}
+
+/* ==========================================================================
+   GRID CONFIGURADO PARA 4 COLUNAS (COMPUTADOR)
+   ========================================================================== */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Padrão celular: 1 por linha */
+    gap: 20px;
+}
+
+/* Configurações de mudança de colunas baseadas na tela */
+@media (min-width: 576px) {
+    .books-grid { grid-template-columns: repeat(2, 1fr); } /* Telas pequenas: 2 por linha */
+}
+@media (min-width: 992px) {
+    .books-grid { grid-template-columns: repeat(4, 1fr); } /* Computador: 4 por linha perfeitamente */
+}
+
+/* Estrutura base de cada card (Agora verticalizado e menor) */
+.book-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column; /* Elementos empilhados para caber no bloco menor */
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   LÓGICA DE ALTERNÂNCIA DE CORES (ADAPTADA PARA FORMATO CARD)
+   ========================================================================== */
+
+/* Cards Ímpares -> [FUNDO AZUL CLARO] */
+.book-card:nth-child(odd) {
+    background-color: #8BB0C9;
+    color: #FFFFFF;
+    border: none;
+}
+.book-card:nth-child(odd) h4 { color: #FFFFFF; }
+.book-card:nth-child(odd) .book-info p { color: #FFFFFF; }
+.book-card:nth-child(odd) .book-info strong { color: #2C3E50; } /* Contraste escuro sutil para leitura */
+.book-card:nth-child(odd) .book-cover img { border: 2px solid #FFFFFF; }
+.book-card:nth-child(odd) .btn-solicitar {
+    background-color: #FFFFFF;
+    color: #8BB0C9;
+}
+.book-card:nth-child(odd) .btn-solicitar:hover {
+    background-color: #4A5D6B;
+    color: #FFFFFF;
+}
+
+/* Cards Pares -> [FUNDO BRANCO] */
+.book-card:nth-child(even) {
+    background-color: #FFFFFF;
+    color: #4A5D6B;
+    border: 1px solid #E0E0E0;
+}
+.book-card:nth-child(even) h4 { color: #4A5D6B; }
+.book-card:nth-child(even) .book-info p { color: #555555; }
+.book-card:nth-child(even) .book-info strong { color: #4A5D6B; }
+.book-card:nth-child(even) .book-cover img { border: 2px solid #E0E0E0; }
+.book-card:nth-child(even) .btn-solicitar {
+    background-color: #8BB0C9;
+    color: #FFFFFF;
+}
+.book-card:nth-child(even) .btn-solicitar:hover {
+    background-color: #4A5D6B;
+    color: #FFFFFF;
+}
+
+/* ==========================================================================
+   ELEMENTOS INTERNOS DOS CARDS
+   ========================================================================== */
+
+/* Capa do Livro */
+.book-cover {
+    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.book-cover img {
+    width: 100px;
+    height: 145px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Informações e textos */
+.book-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Força o botão a ir para o final mesmo se o título for curto */
+    justify-content: space-between;
+}
+
+.book-info h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-height: 2.4em; /* Mantém títulos alinhados se ocuparem 1 ou 2 linhas */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.book-info p {
+    margin: 4px 0;
+    font-size: 0.88rem;
+}
+
+.book-donor {
+    margin-bottom: 12px !important;
+    border-top: 1px solid rgba(139, 176, 201, 0.3);
+    padding-top: 6px;
+}
+
+/* Botão de Ação (Solicitar Livro) */
+.btn-solicitar {
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    display: block;
+    width: 100%; /* Botão ocupa a largura total do card pequeno */
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: auto; /* Empurra o botão sempre para a base do card */
+}
+
+/* Alertas, Mensagens vazias e Rodapé */
+.error-msg, .empty-msg {
+    text-align: center;
+    color: #D9534F;
+    font-weight: 500;
+    margin: 30px auto;
+}
+
+.site-footer {
+    background-color: #8BB0C9;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 60px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.modal-overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal-box {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    box-sizing: border-box;
+}
+
+.modal-fechar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #888;
+}
+
+.modal-fechar:hover {
+    color: #333;
+}

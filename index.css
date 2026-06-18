@@ -1,0 +1,389 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E RESETS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FFFFFF;
+    color: #333333; /* CORRIGIDO: Texto escuro por padrão para não sumir no fundo branco */
+    line-height: 1.6;
+}
+
+/* Títulos com estilo rústico/casual */
+h1, h2, h3 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   CABEÇALHO (HEADER) - FUNDO BRANCO
+   ========================================================================== */
+.site-header {
+    background-color: #FFFFFF;
+    padding: 15px 40px;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+}
+
+.header-content .logo {
+    max-height: 50px;
+    width: auto;
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4A5D6B;
+    margin-left: 20px; 
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto; 
+}
+
+.nav a {
+    text-decoration: none;
+    color: #4A5D6B;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #2F3E46;
+}
+
+/* Botões do Menu */
+.nav .signup-link, 
+.nav .login-link {
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.nav .signup-link {
+    background-color: #8BB0C9;
+    color: #FFFFFF;
+}
+
+.nav .login-link {
+    background-color: #4A5D6B;
+    color: #FFFFFF;
+}
+
+/* ==========================================================================
+   SEÇÃO 1: DOE LIVROS, TRANSFORME VIDAS - [FUNDO AZUL CLARO]
+   ========================================================================== */
+.usuario-content {
+    background-color: #8BB0C9;
+    color: #FFFFFF;
+    padding: 60px 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.usuario-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+
+.usuario-content p {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    font-size: 1.1rem;
+}
+
+.usuario-content button {
+    background-color: #FFFFFF;
+    color: #8BB0C9;
+    border: none;
+    padding: 12px 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.usuario-content button:hover {
+    background-color: #F0F0F0;
+}
+
+/* ==========================================================================
+   SEÇÃO 2: A IMPORTÂNCIA DA DOAÇÃO (SOBRE) - [FUNDO BRANCO]
+   ========================================================================== */
+.usuario-content2 {
+    background-color: #FFFFFF; /* Fundo Branco */
+    color: #4A5D6B;            /* Texto Escuro */
+    padding: 60px 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.usuario-content2 h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #4A5D6B;
+}
+
+.usuario-content2 p {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: justify;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555555;
+}
+
+/* ==========================================================================
+   SEÇÃO 3: COMO FUNCIONA O PROJETO - [FUNDO AZUL CLARO]
+   ========================================================================== */
+.funcionamento {
+    background-color: #8BB0C9; /* Fundo Azul Claro */
+    color: #FFFFFF;            /* Texto Branco */
+    padding: 60px 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.funcionamento h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+}
+
+/* Container que segura os 3 cards */
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+/* O Card completo branco (mantido branco para destacar no fundo azul) */
+.card-item {
+    background-color: #FFFFFF;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 12px;
+    padding: 30px 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-item h3 {
+    color: #4A5D6B;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+}
+
+.card-item p {
+    color: #555555;
+    font-size: 0.95rem;
+    margin: 0;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Alinhamento lado a lado para computadores (Desktops) */
+@media (min-width: 900px) {
+    .cards-container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        gap: 25px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .card-item {
+        flex: 1;
+        max-width: 350px;
+    }
+}
+
+/* ==========================================================================
+   SEÇÃO 4: PERGUNTAS FREQUENTES (FAQ) - [FUNDO BRANCO]
+   ========================================================================== */
+.Perguntas {
+    background-color: #FFFFFF; /* Fundo Branco */
+    color: #4A5D6B;            /* Texto Escuro */
+    padding: 60px 20px;
+    width: 100%;
+}
+
+.Perguntas h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #4A5D6B;
+}
+
+/* Box interno para limitar a largura do FAQ na tela */
+.faq-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+details {
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    padding: 15px;
+    transition: background-color 0.3s;
+}
+
+details[open] {
+    background-color: #F1F5F9;
+}
+
+summary {
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #4A5D6B;
+}
+
+summary::after {
+    content: '▼';
+    font-size: 0.8rem;
+    color: #8BB0C9;
+}
+
+details[open] summary::after {
+    content: '▲';
+}
+
+details p {
+    margin-top: 10px;
+    color: #555555;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   SEÇÃO 5: CONTATO - [FUNDO AZUL CLARO]
+   ========================================================================== */
+.contato {
+    background-color: #8BB0C9; /* Fundo Azul Claro */
+    color: #FFFFFF;            /* Texto Branco */
+    padding: 60px 20px;
+    width: 100%;
+}
+
+.contato h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #FFFFFF;
+}
+
+.form-contato {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-contato input, 
+.form-contato textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: #E2E8F0;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #333333;
+}
+
+.form-contato input::placeholder, 
+.form-contato textarea::placeholder {
+    color: #777777;
+}
+
+.form-contato button {
+    background-color: #FFFFFF;
+    color: #4A5D6B;
+    border: none;
+    padding: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-contato button:hover {
+    background-color: #F0F0F0;
+}
+
+/* ==========================================================================
+   SEÇÃO 6: PIX / AJUDE NOSSO PROJETO - [FUNDO BRANCO]
+   ========================================================================== */
+.pix {
+    background-color: #FFFFFF; /* Fundo Branco */
+    color: #4A5D6B;            /* Texto Escuro */
+    padding: 60px 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.pix h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #4A5D6B;
+}
+
+.pix p {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    color: #666666;
+    font-size: 1.05rem;
+}
+
+.pix img {
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+    border: 1px solid #E0E0E0;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+}
+
+/* ==========================================================================
+   RODAPÉ (FOOTER) - [FUNDO AZUL CLARO]
+   ========================================================================== */
+.site-footer {
+    background-color: #8BB0C9; /* Fundo Azul Claro */
+    color: #FFFFFF;            /* Texto Branco */
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    width: 100%;
+}

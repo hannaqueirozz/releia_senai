@@ -1,0 +1,228 @@
+/* ==========================================================================
+   ESTILO GERAL E LAYOUT - RELEIA (LISTAGEM)
+   ========================================================================== */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FFFFFF;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Banner superior - Corrigido para o Azul Escuro da paleta RELEIA */
+.hero-banner {
+    background-color: #4A5D6B;
+    color: #FFFFFF;
+    padding: 50px 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hero-banner h2 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Cabeçalho da listagem */
+.unidades-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    padding: 0 20px;
+}
+
+/* "Organizações Parceiras" alterado explicitamente para o Azul do projeto */
+.unidades-header h2 {
+    color: #4A5D6B; /* Azul Escuro Corporativo */
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.unidades-header p {
+    color: #555555;
+    font-size: 1.05rem;
+}
+
+/* O container principal que segura a lista de todas as OSCs */
+.container-perfil {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Estrutura base de cada card de OSC */
+.card-perfil {
+    width: 100%;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.card-perfil:hover {
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   LÓGICA DE ALTERNÂNCIA AUTOMÁTICA DE CORES DOS CONTAINERS
+   ========================================================================== */
+
+/* --- 1º, 3º, 5º... CONTAINERS (ÍMPARES) -> [FUNDO AZUL CLARO] --- */
+.card-perfil:nth-child(odd) {
+    background-color: #8BB0C9;
+    color: #FFFFFF;
+    border: none;
+}
+
+.card-perfil:nth-child(odd) .nome-resumido { color: #FFFFFF; }
+.card-perfil:nth-child(odd) .perfil-direita p { color: #FFFFFF; }
+.card-perfil:nth-child(odd) .perfil-direita strong { color: #4A5D6B; } /* Grafite para contraste */
+.card-perfil:nth-child(odd) .avatar-placeholder { 
+    background-color: rgba(255, 255, 255, 0.2); 
+    border: 2px solid #FFFFFF;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>');
+}
+.card-perfil:nth-child(odd) .btn-ver-perfil {
+    background-color: #FFFFFF;
+    color: #8BB0C9;
+}
+.card-perfil:nth-child(odd) .btn-ver-perfil:hover {
+    background-color: #4A5D6B;
+    color: #FFFFFF;
+}
+
+/* --- 2º, 4º, 6º... CONTAINERS (PARES) -> [FUNDO BRANCO] --- */
+.card-perfil:nth-child(even) {
+    background-color: #FFFFFF;
+    color: #4A5D6B;
+    border: 1px solid #E0E0E0;
+}
+
+.card-perfil:nth-child(even) .nome-resumido { color: #4A5D6B; }
+.card-perfil:nth-child(even) .perfil-direita p { color: #555555; }
+.card-perfil:nth-child(even) .perfil-direita strong { color: #4A5D6B; }
+.card-perfil:nth-child(even) .avatar-placeholder { 
+    background-color: #E2E8F0; 
+    border: 2px solid #E0E0E0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23a0aec0"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>');
+}
+.card-perfil:nth-child(even) .btn-ver-perfil {
+    background-color: #8BB0C9;
+    color: #FFFFFF;
+}
+.card-perfil:nth-child(even) .btn-ver-perfil:hover {
+    background-color: #4A5D6B;
+}
+
+/* ==========================================================================
+   ELEMENTOS INTERNOS DOS CARDS
+   ========================================================================== */
+.avatar-placeholder {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    flex-shrink: 0;
+}
+
+.nome-resumido {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.perfil-direita {
+    width: 100%;
+    text-align: left;
+}
+
+.perfil-direita p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+}
+
+.os-about {
+    background: rgba(0, 0, 0, 0.03);
+    padding: 12px;
+    border-radius: 6px;
+    margin: 15px 0 !important;
+}
+.card-perfil:nth-child(even) .os-about {
+    background: #F8FAFC;
+}
+
+.status-list-block {
+    margin: 12px 0;
+    padding-left: 10px;
+    border-left: 3px solid rgba(139, 176, 201, 0.5);
+}
+
+.os-card-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(139, 176, 201, 0.2);
+}
+
+.btn-ver-perfil {
+    text-decoration: none;
+    padding: 10px 22px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+}
+
+/* Responsividade: Alinhamento horizontal em computadores */
+@media (min-width: 768px) {
+    .card-perfil {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        gap: 30px;
+    }
+    .avatar-placeholder {
+        margin-bottom: 0;
+    }
+    .os-card-footer {
+        border-top: none;
+        padding-top: 0;
+        margin-top: 0;
+    }
+}
+
+/* Erros e Rodapé */
+.error-msg, .empty-msg {
+    text-align: center;
+    color: #D9534F;
+    font-weight: 500;
+    margin: 20px;
+}
+
+.site-footer {
+    background-color: #8BB0C9;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    margin-top: 40px;
+}

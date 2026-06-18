@@ -1,0 +1,301 @@
+/* ==========================================================================
+   Configurações Globais e Reset
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    background-color: #EBEDEF; /* Fundo total da página em cinza claro */
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   Contêiner Principal (Card Centralizado)
+   ========================================================================== */
+.container {
+    width: 100%;
+    max-width: 1050px;
+    height: 700px;
+}
+
+.form-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Painel Esquerdo (Logo no Topo, Frase no Meio, Nome do Site Embaixo)
+   ========================================================================== */
+.left-panel {
+    flex: 1;
+    background-color: #ffffff; /* Lado esquerdo branco */
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui o espaço entre os blocos */
+    align-items: center;            
+    text-align: center;             
+}
+
+.left-panel a {
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: auto; /* Empurra os elementos de baixo, fixando a logo no topo */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+/* Frase do autor (Centralizada verticalmente) */
+.description {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    font-style: italic;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* Nome do site / Boas-vindas (Na parte de baixo) */
+.welcome {
+    font-size: 36px;
+    font-weight: 600;
+    color: #222;
+    line-height: 1.2;
+    margin-top: auto; /* Fixa o título na base do painel */
+    margin-bottom: 0;            
+}
+
+/* ==========================================================================
+   Painel Direito (Seleção e Formulários) - Azul #7A9FBE
+   ========================================================================== */
+.right-panel {
+    flex: 1;
+    background-color: #7A9FBE; /* Lado direito de volta para o Azul original */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- ESTILO 1: Tela de Seleção (Doador vs Organização) --- */
+.selection-container {
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.selection-title {
+    color: #ffffff; /* Branco para contrastar no Azul */
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.selection-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Botões Brancos de Opção de Cadastro */
+.btn-option {
+    display: block;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.btn-option:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.text-group strong {
+    color: #333333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.footer-links {
+    text-align: center;
+}
+
+.back-link {
+    color: #ffffff; /* Branco para contrastar no Azul */
+    font-size: 14px;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.back-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* --- ESTILO 2: Campos dos Formulários (OSCs e Doadores) --- */
+.form {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%; 
+    overflow-y: auto; 
+    padding-right: 8px; 
+}
+
+/* Barra de rolagem interna do form */
+.form::-webkit-scrollbar {
+    width: 6px;
+}
+.form::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4); /* Voltou a ser cinza claro translúcido */
+    border-radius: 10px;
+}
+
+.form label {
+    color: #ffffff; /* Branco para contrastar no Azul */
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    margin-top: 12px;
+}
+
+.form label:first-of-type {
+    margin-top: 0;
+}
+
+.form input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid transparent; 
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.95); /* Input limpo sem bordas cinzas soltas */
+    color: #333333;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.form input:focus {
+    outline: none;
+    background-color: #ffffff;
+    border-color: #3b5973; 
+    box-shadow: 0 0 0 3px rgba(59, 89, 115, 0.2);
+}
+
+.form input::placeholder {
+    color: #999999;
+}
+
+/* Botões do Formulário (Registrar / Voltar) */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.btn.register {
+    background-color: #2c3e50; /* Botão escuro antigo para excelente contraste no azul */
+    color: #ffffff;
+}
+
+.btn.register:hover {
+    background-color: #1a252f;
+    transform: translateY(-1px);
+}
+
+.btn.back {
+    background-color: transparent;
+    color: #ffffff; /* Voltou a ser branco para o fundo azul */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.btn.back:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+}
+
+/* ==========================================================================
+   Responsividade (Mobile e Tablet)
+   ========================================================================== */
+@media (max-width: 850px) {
+    .container {
+        height: auto;
+    }
+
+    .form-wrapper {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-panel, .right-panel {
+        flex: none;
+        width: 100%;
+    }
+
+    .left-panel {
+        padding: 40px 30px;
+        gap: 20px;
+    }
+
+    .welcome {
+        margin-top: 15px;
+        margin-bottom: 0;
+        font-size: 28px;
+    }
+
+    .right-panel {
+        padding: 40px 20px;
+    }
+
+    .form {
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
+    }
+}
